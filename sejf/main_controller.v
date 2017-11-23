@@ -12,7 +12,7 @@ module main_controller(
     output reg reg_sel
     );
 
-reg [1:0] st, ust;
+reg [2:0] st, ust;
 localparam idle=3'b000, init=3'b001,
 			  addr=3'b010, addr1=3'b011,
 			  ref=3'b100, ref1=3'b101;
@@ -92,16 +92,22 @@ begin
 		init:
 			if (lcd_finish)
 				ust = addr;
+			else
+				ust = init;
 		addr:
 			ust = addr1;
 		addr1:
 			if (lcd_finish) 
 				ust = ref;
+			else
+				ust = addr1;
 		ref:
 			ust = ref1;
 		ref1:
 			if (lcd_finish)
 				ust = addr;
+			else
+				ust = ref1;
 	endcase
 end
 

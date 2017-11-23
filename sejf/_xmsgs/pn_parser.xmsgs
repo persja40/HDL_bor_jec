@@ -8,10 +8,46 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/LCD_dp.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/bcd_2dec.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/dig_compare.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/lcd_controller.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/lcd_driver.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/lcd_init_refresh.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/main_controller.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/master_fsm.v&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/mux4.v&quot; into library work</arg>
 </msg>
 
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/mux6.v&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/mux8.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/ose_decoder_fsm.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/lab_jos/borkiewicz_jeczmionek/HDL_bor_jec/sejf/write_cycle.v&quot; into library work</arg>
 </msg>
 
 </messages>

@@ -43,14 +43,17 @@ always@(posedge clk_1ms, posedge reset)
 always @*
 begin
 	wr_enable = 1'b0;
+	lcd_finish = 1'b0;
 	case (st)
 		idle:
 			if (lcd_enable)
 				ust = data;
 			else
 				ust = idle;
-		data:
+		data: begin
 			ust = data1;
+			wr_enable = 1'b1;
+		end
 		data1: 
 			if (wr_finish)
 				ust = endlcd;
