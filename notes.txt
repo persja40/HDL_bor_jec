@@ -1,0 +1,18 @@
+
+Kiedy wykryjemy kręcenie:
+	- cnten: jesli 0 to nastapil obrot
+	- up: wskazuje kierunek
+	- dirch: nastepny obrot jest w innym kierunku niz poprzedni
+
+Sel:
+	wkazuje ktora z 3 liczb szyfru jest wpisywana
+
+31
+	bcd0 = 1	
+	bcd1 = 3
+
+countEn: wylacza dzialanie licznika
+	musi byc na 0 razem z cnten zeby licznik cos zrobil
+
+
+polepszyc dzialanie bad_nu

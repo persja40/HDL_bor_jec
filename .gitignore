@@ -1,0 +1,11 @@
+dig_compare.prj
+dig_compare.stx
+dig_compare.xst
+.lso
+xst
+ose_decoder_fsm.prj
+ose_decoder_fsm.stx
+ose_decoder_fsm.xst
+master_fsm.prj
+master_fsm.stx
+master_fsm.xst
