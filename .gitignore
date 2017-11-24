@@ -1,42 +1,26 @@
 *.prj
 *.stx
 *.xst
-.lso
+*.lso
 xst
 
 
 
 .lso
 xst.xmsgs
-dig_compare.prj
-dig_compare.stx
-dig_compare.xst
 fuse.log
 isim
 isim.cmd
 isim.log
-lcd_controller_stx_beh.prj
-lcd_init_refresh_beh.prj
 lcd_init_refresh_isim_beh.exe
 lcd_init_refresh_isim_beh.wdb
 lcd_init_refresh_stx_beh.prj
 main_controller_stx_beh.prj
-master_fsm.prj
-master_fsm.stx
-master_fsm.xst
-ose_decoder_fsm.prj
-ose_decoder_fsm.stx
-ose_decoder_fsm.xst
 tb_isim_beh.exe
-tb_stx_beh.prj
 top.cmd_log
-top.lso
 top.ngc
 top.ngr
-top.prj
-top.stx
 top.syr
-top.xst
 top_xst.xrpt
 webtalk_pn.xml
 xilinxsim.ini

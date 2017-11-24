@@ -20,6 +20,23 @@ always@(posedge clk_1ms, posedge reset)
 	else
 		st<=ust;
 
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		wr_finish <= 0;
+	else case(st)
+		endwr: wr_finish <= 1;
+		default: wr_finish <= 0;
+	endcase
+
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		E_out <= 0;
+	else case(st)
+		init: E_out <= 1;
+		endwr: E_out <= 0;
+		default: E_out <= 0;
+	endcase
+
 always @* begin
 	wr_finish = 0;
 	E_out = 0;

@@ -3,12 +3,12 @@
 module main_controller(
     input reset,
     input clk_1ms,
+	 input lcd_finish,
     output reg data_sel,
     output reg DB_sel,
     output reg lcd_enable,
     output reg [1:0] lcd_cnt,
     output reg mode,
-    input lcd_finish,
     output reg reg_sel
     );
 
@@ -26,66 +26,71 @@ always@(posedge clk_1ms, posedge reset)
 	else
 		st<=ust;
 
-always@*
-	case(st)
-		idle: lcd_enable <= 1'b1;
-		init: lcd_enable <= 1'b0;
-		addr: lcd_enable <= 1'b1;
-		addr1: lcd_enable <= 1'b0;
-		ref: lcd_enable <= 1'b1;
-		ref1: lcd_enable <= 1'b0;
-	endcase
-	
-always@*
-begin
-	lcd_cnt = INIT_CONST_NO - 1;
-	case(st)
-		addr: lcd_cnt = 0;
-		addr1: lcd_cnt = 0;
-		ref: lcd_cnt = REF_DATA_NO - 1;
-		ref1: lcd_cnt = REF_DATA_NO - 1;
-	endcase
-end
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		lcd_enable<= 1;
+	else
+		case(st)
+			idle: lcd_enable <= 1;
+			init: lcd_enable <= 0;
+			addr: lcd_enable <= 1;
+			addr1: lcd_enable <= 0;
+			ref: lcd_enable <= 1;
+			ref1: lcd_enable <= 0;
+		endcase
 
-always@*
-begin
-	DB_sel = 1;
-	case(st)
-		addr: DB_sel = 0;
-		addr1: DB_sel = 0;
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		lcd_cnt<= INIT_CONST_NO - 1;
+	else
+		case(st)
+			idle: lcd_cnt<= INIT_CONST_NO - 1;
+			addr: lcd_cnt<= 0;
+			ref: lcd_cnt<=REF_DATA_NO - 1;
 	endcase
-end
 
-always@*
-begin
-	data_sel = 0;
-	case(st)
-		ref: data_sel = 1;
-		ref1: data_sel = 1;
-	endcase
-end
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		DB_sel<= 1;
+	else
+		case(st)
+			idle: DB_sel<= 1;
+			addr: DB_sel<= 0;
+			ref: DB_sel<= 1;
+		endcase
 
-always@*
-begin
-	reg_sel = 0;
-	case(st) 
-		ref: reg_sel = 1'b1;
-		ref1: reg_sel = 1'b1;
-	endcase
-end
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		data_sel<= 0;
+	else
+		case(st)
+			idle: data_sel<= 0;
+			ref: data_sel<= 1;
+		endcase
 
-always@*
-begin
-	mode = LCD_INIT;
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		reg_sel<= 0;
+	else
+		case(st) 
+			idle: reg_sel<= 0;
+			ref: reg_sel<= 1;
+			ref1: 
+				if(lcd_finish)
+					reg_sel<= 0;
+		endcase
+
+always@(posedge clk_1ms, posedge reset)
+	if(reset)
+		mode<= LCD_INIT;
+	else
 	case(st)
-		ref: mode = LCD_REF;
+		idle: mode<= LCD_INIT;
+		ref: mode<= LCD_REF;
 	endcase
-end
 
 always @*
 begin
-	//wr_enable = 1'b0;
-	ust = idle;
 	case (st)
 		idle:
 			ust = init;
