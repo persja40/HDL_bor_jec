@@ -37,19 +37,6 @@ always@(posedge clk_1ms, posedge reset)
 		default: E_out <= 0;
 	endcase
 
-always @* begin
-	wr_finish = 0;
-	E_out = 0;
-	case (st)
-	init:
-			E_out = 1;
-	Eout: 
-			E_out = 1;
-	endwr:
-			wr_finish = 1;
-	endcase
-end
-
 always @*
 begin
 	case (st)
