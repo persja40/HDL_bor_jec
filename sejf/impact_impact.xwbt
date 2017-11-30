@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/lab_jos/HDL_bor_jec/sejf/impact.xsl
+OUTFILE=/home/lab_jos/HDL_bor_jec/sejf/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/lab_jos/HDL_bor_jec/sejf
+LICENSE=iMPACT
+USER_INFO=iMPACT

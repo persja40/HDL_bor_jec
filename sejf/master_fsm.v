@@ -18,7 +18,7 @@ module master_fsm(
     output reg clrCount
     );
 
-reg [1:0] st, ust;
+reg [3:0] st, ust;
 localparam locked=4'd0, start=4'd1,
 			  cw=4'd2, first_ok=4'd3,
 			  second_ok=4'd4, third_ok=4'd5,
@@ -62,7 +62,7 @@ begin
 	else case(st)
 		locked: clrCount <= 0;
 		unlocked: clrCount <= 0;
-		default: countEn <= 1;
+		default: clrCount <= 1;
 	endcase
 end
 
@@ -106,35 +106,50 @@ begin
 		locked:
 			if (!open)
 				ust = start;
+			else
+				ust = locked;
 		start:
 			if (!cnten && !up)
 				ust = cw;
+			else
+				ust = start;
 		cw:
 			begin
 				if (dirch && eq)
 					ust = first_ok;
-				if (dirch && !eq)
-					ust = bad_nu;
+				else
+					if (dirch && !eq)
+						ust = bad_nu;
+					else
+						ust = cw;
 			end
 		first_ok:
 			begin
 				if (dirch && eq)
 					ust = second_ok;
-				if (dirch && !eq)
-					ust = bad_nu;
+				else
+					if (dirch && !eq)
+						ust = bad_nu;
+					else
+						ust = first_ok;
 			end
 		second_ok:
 			begin
 				if (!open && eq)
 					ust = third_ok;
-				if (dirch && !eq)
-					ust = bad_nu;
+				else
+					if (dirch && !eq)
+						ust = bad_nu;
+					else
+						ust = second_ok;
 			end
 		third_ok:
 			ust = unlocked;
 		unlocked:
 			if (!lock && !doorCls)
 				ust = lock_ok;
+			else
+				ust = unlocked;
 		lock_ok:
 			ust = locked;
 		bad_nu:

@@ -63,9 +63,13 @@ begin
 		cw0:
 			if (~a)
 				ust = cw1;
+			else
+				ust = cw0;
 		cw1:
 			if (a)
 				ust = cwpe;
+			else
+				ust = cw1;
 		cwpe:
 			if (~b)
 				ust = cwcnt;
@@ -82,10 +86,14 @@ begin
 				ust = cwcnt;
 		ccw1:
 			if(a)
-				ust= ccwpe;
+				ust = ccwpe;
+			else
+				ust = ccw1;
 		ccw0:
 			if(~a)
-				ust= ccw1;
+				ust = ccw1;
+			else
+				ust = ccw0;
 	endcase
 end
 
