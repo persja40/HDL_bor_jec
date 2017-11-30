@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top(
+module top # ( parameter div = 250000 ) (
 	 input reset,
     input clk,
 
@@ -83,7 +83,7 @@ module top(
 		 .data({bcd1, bcd0})
 	);
 	
-	clkdiv #( .div(250000) )  my_clkdiv (
+	clkdiv #( .div(div) )  my_clkdiv (
 		 .clk(clk),
 		 .rst(reset),
        .clk_slow(clk_1ms)

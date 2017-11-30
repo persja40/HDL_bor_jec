@@ -21,7 +21,7 @@ module tb;
 	wire [7:0] DB;
 
 	// Instantiate the Unit Under Test (UUT)
-	top uut #( )(
+	top uut #( .div(1) )(
 		.reset(reset), 
 		.clk(clk_1ms), 
 		
@@ -51,6 +51,9 @@ module tb;
 		lock = 0;
 		open = 0;
 		doorCls = 0;
+		
+		#20 open = 1;
+		#20 open = 0;
 	end;
 
 	initial begin
