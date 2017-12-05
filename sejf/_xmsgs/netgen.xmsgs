@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/lab_jos/HDL_bor_jec/sejf/tb.v" Line 24: Port <arg fmt="%s" index="1">outSt</arg> is not connected to this instance
+<msg type="info" file="NetListWriters" num="633" delta="new" >The generated Verilog netlist contains Xilinx <arg fmt="%s" index="1">SIMPRIM</arg> simulation primitives and has to be used with <arg fmt="%s" index="2">SIMPRIM</arg> simulation library for correct compilation and simulation. 
 </msg>
 
 </messages>

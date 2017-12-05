@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top # ( parameter div = 250000 ) (
+module top # ( parameter div = 2500000 ) (
 	 input reset,
     input clk,
 
@@ -17,7 +17,12 @@ module top # ( parameter div = 250000 ) (
     output E,
     output RW,
     output RS,
-    output [7:0] DB
+    output [7:0] DB,
+	 
+	 // ledy
+	 output outDirch,
+	 output outUp,
+	 output outCnten
     );
 	 
 	wire clk_1ms;
@@ -25,6 +30,13 @@ module top # ( parameter div = 250000 ) (
 	wire [3:0] bcd1;
 	wire blank;
 	wire [1:0] sel;
+	wire dirch;
+	wire up;
+	wire cnten;
+	
+	assign outDirch = dirch;
+	assign outUp = up;
+	assign outCnten = cnten;
 	
 	ose_decoder_fsm my_ose_decoder_fsm (
 		 .a(a),

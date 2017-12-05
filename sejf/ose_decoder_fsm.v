@@ -10,13 +10,13 @@ module ose_decoder_fsm(
     output reg dirch
     );
 
-reg [1:0] st, ust;
+reg [2:0] st, ust;
 localparam cw0=3'b000, cw1=3'b001,
            cwpe=3'b010, cwcnt=3'b011,
 			  ccwcnt=3'b100, ccwpe=3'b101,
 			  ccw1=3'b110, ccw0=3'b111;
 
-always@(posedge clk, posedge rst)
+always @(posedge clk, posedge rst)
 begin
 	if(rst)
 		st<=cw0;
@@ -24,18 +24,34 @@ begin
 		st<=ust;
 end
 
-always@(posedge clk, posedge rst)
+always @*
 begin
 	if(rst)
 		dirch <= 0;
 	else case(st)
-		cwpe: if(b) dirch <= 1;
-		ccwpe: if (!b) dirch <= 1;
+		cwpe: 
+			if (b) 
+			begin
+				dirch <= 1;
+				end
+			else
+			begin
+				dirch <= 0;
+				end
+		ccwpe:
+			if (!b)
+			begin
+				dirch <= 1;
+				end
+			else
+			begin
+				dirch <= 0;
+				end
 		default: dirch <= 0;
 	endcase
 end
 
-always@(posedge clk, posedge rst)
+always @*
 begin
 	if(rst)
 		cnten <= 1;
@@ -46,7 +62,7 @@ begin
 	endcase
 end
 
-always@(posedge clk, posedge rst)
+always @*
 begin
 	if(rst)
 		up <= 1;

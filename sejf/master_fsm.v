@@ -17,14 +17,13 @@ module master_fsm(
     output reg blank,
     output reg clrCount
     );
-
+	 
 reg [3:0] st, ust;
 localparam locked=4'd0, start=4'd1,
 			  cw=4'd2, first_ok=4'd3,
 			  second_ok=4'd4, third_ok=4'd5,
 			  unlocked=4'd6, lock_ok=4'd7,
-			  bad_nu=4'd8;
-			  
+			  bad_nu=4'd8;		  
 
 always@(posedge clk, posedge rst)
 begin

@@ -54,6 +54,14 @@ module tb;
 		
 		#20 open = 1;
 		#20 open = 0;
+		
+		#20 a = 1;
+		#20 a = 0;
+		
+		#120
+		
+		#20 a = 1; b = 1;
+		#120 a = 0; b = 0;
 	end;
 
 	initial begin
