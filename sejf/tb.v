@@ -21,7 +21,7 @@ module tb;
 	wire [7:0] DB;
 
 	// Instantiate the Unit Under Test (UUT)
-	top uut #( .div(1) )(
+	top #( .div(1) ) uut (
 		.reset(reset), 
 		.clk(clk_1ms), 
 		
