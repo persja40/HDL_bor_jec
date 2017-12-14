@@ -4,7 +4,7 @@ module tb;
 
 	// Inputs
 	reg reset;
-	reg clk_1ms;
+	reg clk;
 	reg a;
 	reg b;
 	reg lock;
@@ -23,7 +23,7 @@ module tb;
 	// Instantiate the Unit Under Test (UUT)
 	top #( .div(1) ) uut (
 		.reset(reset), 
-		.clk(clk_1ms), 
+		.clk(clk), 
 		
 		.a(a),
 		.b(b),
@@ -41,8 +41,8 @@ module tb;
 
 	initial begin
 		reset = 1'b0;
-		#2 reset = 1'b1;
-      #20 reset = 1'b0;
+		#20 reset = 1'b1;
+      #10 reset = 1'b0;
 	end
 	
 	initial begin
@@ -60,13 +60,13 @@ module tb;
 		
 		#120
 		
-		#20 a = 1; b = 1;
-		#120 a = 0; b = 0;
+		#20 a = 1; //b = 1;
+		#120 a = 0; //b = 0;
 	end;
 
 	initial begin
-		clk_1ms = 1'b0;
-		forever #10 clk_1ms = ~clk_1ms;
+		clk = 1'b0;
+		forever #10 clk = ~clk;
 	end
      initial #2000 $finish; 
 endmodule

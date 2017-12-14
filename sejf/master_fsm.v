@@ -36,11 +36,11 @@ end
 always@(posedge clk, posedge rst)
 begin
 	if(rst)
-		blank <= 0;
+		blank <= 1;
 	else case(st)
-		locked: blank <= 0;
-		unlocked: blank <= 0;
-		default: blank <= 1;
+		locked: blank <= 1;
+		unlocked: blank <= 1;
+		default: blank <= 0;
 	endcase
 end
 
@@ -101,6 +101,7 @@ end
 
 always @*
 begin
+	ust = locked;
 	case (st)
 		locked:
 			if (!open)

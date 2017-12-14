@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-zejlab5::  Tue Dec 05 10:25:53 2017
+elektrolab3::  Thu Dec 14 18:48:39 2017
 
 par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
 
@@ -50,7 +50,7 @@ Design Summary Report:
 
 
    Number of BUFGMUXs                        2 out of 24      8%
-   Number of Slices                         91 out of 5888    1%
+   Number of Slices                         83 out of 5888    1%
       Number of SLICEMs                      0 out of 2944    0%
 
 
@@ -60,48 +60,48 @@ Placer effort level (-pl):    High
 Placer cost table entry (-t): 1
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 8 secs 
-Finished initial Timing Analysis.  REAL time: 8 secs 
+Starting initial Timing Analysis.  REAL time: 7 secs 
+Finished initial Timing Analysis.  REAL time: 7 secs 
 
 
 Starting Placer
-Total REAL time at the beginning of Placer: 8 secs 
+Total REAL time at the beginning of Placer: 7 secs 
 Total CPU  time at the beginning of Placer: 2 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:b3bbf9d) REAL time: 9 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:542be283) REAL time: 8 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:b3bbf9d) REAL time: 9 secs 
+Phase 2.7  Design Feasibility Check (Checksum:542be283) REAL time: 8 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:b3bbf9d) REAL time: 9 secs 
+Phase 3.31  Local Placement Optimization (Checksum:542be283) REAL time: 8 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:3bc4cc26) REAL time: 11 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:bdc3e88a) REAL time: 10 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:3bc4cc26) REAL time: 11 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:bdc3e88a) REAL time: 10 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:3bc4cc26) REAL time: 11 secs 
+Phase 6.36  Local Placement Optimization (Checksum:bdc3e88a) REAL time: 10 secs 
 
 Phase 7.8  Global Placement
 ..
 ..
-Phase 7.8  Global Placement (Checksum:c64683e4) REAL time: 11 secs 
+Phase 7.8  Global Placement (Checksum:80177337) REAL time: 10 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:c64683e4) REAL time: 11 secs 
+Phase 8.5  Local Placement Optimization (Checksum:80177337) REAL time: 10 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:fc405dcf) REAL time: 11 secs 
+Phase 9.18  Placement Optimization (Checksum:6108ffaf) REAL time: 10 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:fc405dcf) REAL time: 11 secs 
+Phase 10.5  Local Placement Optimization (Checksum:6108ffaf) REAL time: 10 secs 
 
-Total REAL time to Placer completion: 11 secs 
+Total REAL time to Placer completion: 10 secs 
 Total CPU  time to Placer completion: 5 secs 
 Writing design to file top.ncd
 
@@ -110,25 +110,25 @@ Writing design to file top.ncd
 Starting Router
 
 
-Phase  1  : 631 unrouted;      REAL time: 16 secs 
+Phase  1  : 594 unrouted;      REAL time: 15 secs 
 
-Phase  2  : 578 unrouted;      REAL time: 16 secs 
+Phase  2  : 545 unrouted;      REAL time: 15 secs 
 
-Phase  3  : 101 unrouted;      REAL time: 16 secs 
+Phase  3  : 97 unrouted;      REAL time: 15 secs 
 
-Phase  4  : 101 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  4  : 97 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
 
 Updating file: top.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 16 secs 
 
-Total REAL time to Router completion: 17 secs 
+Total REAL time to Router completion: 16 secs 
 Total CPU time to Router completion: 11 secs 
 
 Partition Implementation Status
@@ -147,9 +147,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|  my_clkdiv/clk_slow | BUFGMUX_X1Y10| No   |   40 |  0.110     |  1.101      |
+|  my_clkdiv/clk_slow | BUFGMUX_X1Y10| No   |   39 |  0.093     |  1.083      |
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X2Y11| No   |   12 |  0.073     |  1.103      |
+|           clk_BUFGP | BUFGMUX_X2Y11| No   |    9 |  0.049     |  1.079      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -169,7 +169,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH | SETUP       |    14.349ns|     5.651ns|       0|           0
+  NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH | SETUP       |    14.331ns|     5.669ns|       0|           0
    50%                                      | HOLD        |     1.223ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
@@ -181,10 +181,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 18 secs 
+Total REAL time to PAR completion: 17 secs 
 Total CPU time to PAR completion: 12 secs 
 
-Peak Memory Usage:  653 MB
+Peak Memory Usage:  631 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

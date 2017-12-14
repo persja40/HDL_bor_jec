@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Dec 05 10:25:49 2017
+// Written by: Map P.20131013 on Thu Dec 14 18:48:36 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -24,10 +24,10 @@ COMP "outCnten" LOCATE = SITE "Y22" LEVEL 1;
 COMP "E" LOCATE = SITE "AB4" LEVEL 1;
 COMP "reset" LOCATE = SITE "R13" LEVEL 1;
 COMP "DB<0>" LOCATE = SITE "Y13" LEVEL 1;
-COMP "a" LOCATE = SITE "T13" LEVEL 1;
+COMP "a" LOCATE = SITE "U15" LEVEL 1;
 COMP "DB<1>" LOCATE = SITE "AB18" LEVEL 1;
 COMP "lock" LOCATE = SITE "T16" LEVEL 1;
-COMP "b" LOCATE = SITE "R14" LEVEL 1;
+COMP "b" LOCATE = SITE "T15" LEVEL 1;
 COMP "DB<2>" LOCATE = SITE "AB17" LEVEL 1;
 NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 SCHEMATIC END;

@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top # ( parameter div = 2500000 ) (
+module top # ( parameter div = 50000 ) (
 	 input reset,
     input clk,
 
@@ -38,6 +38,7 @@ module top # ( parameter div = 2500000 ) (
 	assign outUp = up;
 	assign outCnten = cnten;
 	
+	/*
 	ose_decoder_fsm my_ose_decoder_fsm (
 		 .a(a),
 		 .b(b),
@@ -47,6 +48,18 @@ module top # ( parameter div = 2500000 ) (
 		 .up(up),
 		 .dirch(dirch)
 	);
+	*/
+	
+	fake_decoder my_fake_decoder (
+		 .leftButton(a),
+		 .rightButton(b),
+       .clk(clk_1ms),
+		 .rst(reset),
+		 .cnten(cnten),
+		 .up(up),
+		 .dirch(dirch)
+	);
+		
 		
 	bcd_2dec my_bcd_2dec (
 		 .rst(reset),
