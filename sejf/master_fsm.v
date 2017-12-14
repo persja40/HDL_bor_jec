@@ -57,11 +57,11 @@ end
 always@(posedge clk, posedge rst)
 begin
 	if(rst)
-		clrCount <= 0;
+		clrCount <= 1;
 	else case(st)
-		locked: clrCount <= 0;
-		unlocked: clrCount <= 0;
-		default: clrCount <= 1;
+		locked: clrCount <= 1;
+		unlocked: clrCount <= 1;
+		default: clrCount <= 0;
 	endcase
 end
 
@@ -104,7 +104,7 @@ begin
 	ust = locked;
 	case (st)
 		locked:
-			if (!open)
+			if (open)
 				ust = start;
 			else
 				ust = locked;
@@ -135,7 +135,7 @@ begin
 			end
 		second_ok:
 			begin
-				if (!open && eq)
+				if (open && eq)
 					ust = third_ok;
 				else
 					if (dirch && !eq)
@@ -146,7 +146,7 @@ begin
 		third_ok:
 			ust = unlocked;
 		unlocked:
-			if (!lock && !doorCls)
+			if (lock && doorCls)
 				ust = lock_ok;
 			else
 				ust = unlocked;

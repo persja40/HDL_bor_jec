@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module top # ( parameter div = 50000 ) (
+module top # ( parameter div = 5000000 ) (
 	 input reset,
     input clk,
 

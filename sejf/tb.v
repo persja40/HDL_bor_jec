@@ -55,19 +55,24 @@ module tb;
 		#20 open = 1;
 		#20 open = 0;
 		
-		#20 a = 1;
-		#20 a = 0;
-		
-		#120
+		#20 a = 1; //b = 1;
+		#120 a = 0; //b = 0;
 		
 		#20 a = 1; //b = 1;
 		#120 a = 0; //b = 0;
+		
+		#20 a = 1; //b = 1;
+		#120 a = 0; //b = 0;
+		
+		#20 a = 1; //b = 1;
+		#12000 a = 0; //b = 0;
 	end;
 
 	initial begin
 		clk = 1'b0;
 		forever #10 clk = ~clk;
 	end
-     initial #2000 $finish; 
+
+	//initial #2000 $finish; 
 endmodule
 

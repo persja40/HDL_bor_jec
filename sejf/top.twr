@@ -36,296 +36,335 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 Timing constraint: NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 409 paths analyzed, 34 endpoints analyzed, 0 failing endpoints
+ 571 paths analyzed, 40 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   5.669ns.
+ Minimum period is   5.619ns.
 --------------------------------------------------------------------------------
 
-Paths for end point my_clkdiv/cnt_12 (SLICE_X34Y83.G1), 16 paths
+Paths for end point my_clkdiv/cnt_2 (SLICE_X34Y74.G1), 19 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     14.331ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_0 (FF)
-  Destination:          my_clkdiv/cnt_12 (FF)
+Slack (setup path):     14.381ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_12 (FF)
+  Destination:          my_clkdiv/cnt_2 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.642ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.022 - 0.049)
+  Data Path Delay:      5.623ns (Levels of Logic = 3)
+  Clock Path Skew:      0.004ns (0.063 - 0.059)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: my_clkdiv/cnt_0 to my_clkdiv/cnt_12
+  Maximum Data Path: my_clkdiv/cnt_12 to my_clkdiv/cnt_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X34Y77.YQ      Tcko                  0.676   my_clkdiv/cnt<1>
-                                                       my_clkdiv/cnt_0
-    SLICE_X32Y76.G1      net (fanout=2)        0.499   my_clkdiv/cnt<0>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y83.G1      net (fanout=17)       1.485   my_clkdiv/comp
-    SLICE_X34Y83.CLK     Tgck                  0.817   my_clkdiv/cnt<13>
-                                                       my_clkdiv/Mcount_cnt_eqn_121
+    SLICE_X34Y78.YQ      Tcko                  0.676   my_clkdiv/cnt<13>
                                                        my_clkdiv/cnt_12
-    -------------------------------------------------  ---------------------------
-    Total                                      5.642ns (2.892ns logic, 2.750ns route)
-                                                       (51.3% logic, 48.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     14.386ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_3 (FF)
-  Destination:          my_clkdiv/cnt_12 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.587ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.022 - 0.049)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y76.XQ      Tcko                  0.631   my_clkdiv/cnt<3>
-                                                       my_clkdiv/cnt_3
-    SLICE_X32Y76.G2      net (fanout=2)        0.489   my_clkdiv/cnt<3>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y83.G1      net (fanout=17)       1.485   my_clkdiv/comp
-    SLICE_X34Y83.CLK     Tgck                  0.817   my_clkdiv/cnt<13>
-                                                       my_clkdiv/Mcount_cnt_eqn_121
-                                                       my_clkdiv/cnt_12
-    -------------------------------------------------  ---------------------------
-    Total                                      5.587ns (2.847ns logic, 2.740ns route)
-                                                       (51.0% logic, 49.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     14.400ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_2 (FF)
-  Destination:          my_clkdiv/cnt_12 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.573ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.022 - 0.049)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: my_clkdiv/cnt_2 to my_clkdiv/cnt_12
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y76.YQ      Tcko                  0.676   my_clkdiv/cnt<3>
+    SLICE_X33Y78.F1      net (fanout=2)        1.290   my_clkdiv/cnt<12>
+    SLICE_X33Y78.COUT    Topcyf                1.195   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_lut<2>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y74.G1      net (fanout=20)       1.349   my_clkdiv/comp
+    SLICE_X34Y74.CLK     Tgck                  0.817   my_clkdiv/cnt<3>
+                                                       my_clkdiv/Mcount_cnt_eqn_21
                                                        my_clkdiv/cnt_2
-    SLICE_X32Y76.G4      net (fanout=2)        0.430   my_clkdiv/cnt<2>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y83.G1      net (fanout=17)       1.485   my_clkdiv/comp
-    SLICE_X34Y83.CLK     Tgck                  0.817   my_clkdiv/cnt<13>
-                                                       my_clkdiv/Mcount_cnt_eqn_121
-                                                       my_clkdiv/cnt_12
     -------------------------------------------------  ---------------------------
-    Total                                      5.573ns (2.892ns logic, 2.681ns route)
-                                                       (51.9% logic, 48.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point my_clkdiv/cnt_14 (SLICE_X34Y82.G1), 16 paths
---------------------------------------------------------------------------------
-Slack (setup path):     14.331ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_0 (FF)
-  Destination:          my_clkdiv/cnt_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.642ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.022 - 0.049)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: my_clkdiv/cnt_0 to my_clkdiv/cnt_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y77.YQ      Tcko                  0.676   my_clkdiv/cnt<1>
-                                                       my_clkdiv/cnt_0
-    SLICE_X32Y76.G1      net (fanout=2)        0.499   my_clkdiv/cnt<0>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y82.G1      net (fanout=17)       1.485   my_clkdiv/comp
-    SLICE_X34Y82.CLK     Tgck                  0.817   my_clkdiv/cnt<15>
-                                                       my_clkdiv/Mcount_cnt_eqn_141
-                                                       my_clkdiv/cnt_14
-    -------------------------------------------------  ---------------------------
-    Total                                      5.642ns (2.892ns logic, 2.750ns route)
-                                                       (51.3% logic, 48.7% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     14.386ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_3 (FF)
-  Destination:          my_clkdiv/cnt_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.587ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.022 - 0.049)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y76.XQ      Tcko                  0.631   my_clkdiv/cnt<3>
-                                                       my_clkdiv/cnt_3
-    SLICE_X32Y76.G2      net (fanout=2)        0.489   my_clkdiv/cnt<3>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y82.G1      net (fanout=17)       1.485   my_clkdiv/comp
-    SLICE_X34Y82.CLK     Tgck                  0.817   my_clkdiv/cnt<15>
-                                                       my_clkdiv/Mcount_cnt_eqn_141
-                                                       my_clkdiv/cnt_14
-    -------------------------------------------------  ---------------------------
-    Total                                      5.587ns (2.847ns logic, 2.740ns route)
-                                                       (51.0% logic, 49.0% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     14.400ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_2 (FF)
-  Destination:          my_clkdiv/cnt_14 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.573ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.027ns (0.022 - 0.049)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: my_clkdiv/cnt_2 to my_clkdiv/cnt_14
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y76.YQ      Tcko                  0.676   my_clkdiv/cnt<3>
-                                                       my_clkdiv/cnt_2
-    SLICE_X32Y76.G4      net (fanout=2)        0.430   my_clkdiv/cnt<2>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y82.G1      net (fanout=17)       1.485   my_clkdiv/comp
-    SLICE_X34Y82.CLK     Tgck                  0.817   my_clkdiv/cnt<15>
-                                                       my_clkdiv/Mcount_cnt_eqn_141
-                                                       my_clkdiv/cnt_14
-    -------------------------------------------------  ---------------------------
-    Total                                      5.573ns (2.892ns logic, 2.681ns route)
-                                                       (51.9% logic, 48.1% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point my_clkdiv/cnt_8 (SLICE_X34Y80.G1), 16 paths
---------------------------------------------------------------------------------
-Slack (setup path):     14.534ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_0 (FF)
-  Destination:          my_clkdiv/cnt_8 (FF)
-  Requirement:          20.000ns
-  Data Path Delay:      5.448ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.018ns (0.031 - 0.049)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Maximum Data Path: my_clkdiv/cnt_0 to my_clkdiv/cnt_8
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y77.YQ      Tcko                  0.676   my_clkdiv/cnt<1>
-                                                       my_clkdiv/cnt_0
-    SLICE_X32Y76.G1      net (fanout=2)        0.499   my_clkdiv/cnt<0>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y80.G1      net (fanout=17)       1.291   my_clkdiv/comp
-    SLICE_X34Y80.CLK     Tgck                  0.817   my_clkdiv/cnt<9>
-                                                       my_clkdiv/Mcount_cnt_eqn_81
-                                                       my_clkdiv/cnt_8
-    -------------------------------------------------  ---------------------------
-    Total                                      5.448ns (2.892ns logic, 2.556ns route)
+    Total                                      5.623ns (2.984ns logic, 2.639ns route)
                                                        (53.1% logic, 46.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     14.589ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_3 (FF)
-  Destination:          my_clkdiv/cnt_8 (FF)
+Slack (setup path):     14.831ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_5 (FF)
+  Destination:          my_clkdiv/cnt_2 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.393ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.018ns (0.031 - 0.049)
+  Data Path Delay:      5.158ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.011ns (0.063 - 0.074)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_8
+  Maximum Data Path: my_clkdiv/cnt_5 to my_clkdiv/cnt_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X34Y76.XQ      Tcko                  0.631   my_clkdiv/cnt<3>
-                                                       my_clkdiv/cnt_3
-    SLICE_X32Y76.G2      net (fanout=2)        0.489   my_clkdiv/cnt<3>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y80.G1      net (fanout=17)       1.291   my_clkdiv/comp
-    SLICE_X34Y80.CLK     Tgck                  0.817   my_clkdiv/cnt<9>
-                                                       my_clkdiv/Mcount_cnt_eqn_81
-                                                       my_clkdiv/cnt_8
+    SLICE_X34Y75.XQ      Tcko                  0.631   my_clkdiv/cnt<5>
+                                                       my_clkdiv/cnt_5
+    SLICE_X33Y77.F2      net (fanout=2)        0.740   my_clkdiv/cnt<5>
+    SLICE_X33Y77.COUT    Topcyf                1.195   my_clkdiv/comp_wg_cy<1>
+                                                       my_clkdiv/comp_wg_lut<0>
+                                                       my_clkdiv/comp_wg_cy<0>
+                                                       my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.COUT    Tbyp                  0.130   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y74.G1      net (fanout=20)       1.349   my_clkdiv/comp
+    SLICE_X34Y74.CLK     Tgck                  0.817   my_clkdiv/cnt<3>
+                                                       my_clkdiv/Mcount_cnt_eqn_21
+                                                       my_clkdiv/cnt_2
     -------------------------------------------------  ---------------------------
-    Total                                      5.393ns (2.847ns logic, 2.546ns route)
-                                                       (52.8% logic, 47.2% route)
+    Total                                      5.158ns (3.069ns logic, 2.089ns route)
+                                                       (59.5% logic, 40.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     14.603ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               my_clkdiv/cnt_2 (FF)
-  Destination:          my_clkdiv/cnt_8 (FF)
+Slack (setup path):     14.845ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_3 (FF)
+  Destination:          my_clkdiv/cnt_2 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      5.379ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.018ns (0.031 - 0.049)
+  Data Path Delay:      5.155ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Maximum Data Path: my_clkdiv/cnt_2 to my_clkdiv/cnt_8
+  Maximum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X34Y76.YQ      Tcko                  0.676   my_clkdiv/cnt<3>
+    SLICE_X34Y74.XQ      Tcko                  0.631   my_clkdiv/cnt<3>
+                                                       my_clkdiv/cnt_3
+    SLICE_X33Y77.G3      net (fanout=2)        0.754   my_clkdiv/cnt<3>
+    SLICE_X33Y77.COUT    Topcyg                1.178   my_clkdiv/comp_wg_cy<1>
+                                                       my_clkdiv/comp_wg_lut<1>
+                                                       my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.COUT    Tbyp                  0.130   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y74.G1      net (fanout=20)       1.349   my_clkdiv/comp
+    SLICE_X34Y74.CLK     Tgck                  0.817   my_clkdiv/cnt<3>
+                                                       my_clkdiv/Mcount_cnt_eqn_21
                                                        my_clkdiv/cnt_2
-    SLICE_X32Y76.G4      net (fanout=2)        0.430   my_clkdiv/cnt<2>
-    SLICE_X32Y76.Y       Tilo                  0.707   my_clkdiv/comp
-                                                       my_clkdiv/comp4
-    SLICE_X32Y76.F1      net (fanout=1)        0.766   my_clkdiv/comp4/O
-    SLICE_X32Y76.X       Tilo                  0.692   my_clkdiv/comp
-                                                       my_clkdiv/comp55
-    SLICE_X34Y80.G1      net (fanout=17)       1.291   my_clkdiv/comp
-    SLICE_X34Y80.CLK     Tgck                  0.817   my_clkdiv/cnt<9>
-                                                       my_clkdiv/Mcount_cnt_eqn_81
-                                                       my_clkdiv/cnt_8
     -------------------------------------------------  ---------------------------
-    Total                                      5.379ns (2.892ns logic, 2.487ns route)
-                                                       (53.8% logic, 46.2% route)
+    Total                                      5.155ns (3.052ns logic, 2.103ns route)
+                                                       (59.2% logic, 40.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point my_clkdiv/cnt_16 (SLICE_X34Y81.G1), 19 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.463ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_12 (FF)
+  Destination:          my_clkdiv/cnt_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.517ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.020ns (0.039 - 0.059)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: my_clkdiv/cnt_12 to my_clkdiv/cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y78.YQ      Tcko                  0.676   my_clkdiv/cnt<13>
+                                                       my_clkdiv/cnt_12
+    SLICE_X33Y78.F1      net (fanout=2)        1.290   my_clkdiv/cnt<12>
+    SLICE_X33Y78.COUT    Topcyf                1.195   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_lut<2>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y81.G1      net (fanout=20)       1.243   my_clkdiv/comp
+    SLICE_X34Y81.CLK     Tgck                  0.817   my_clkdiv/cnt<17>
+                                                       my_clkdiv/Mcount_cnt_eqn_161
+                                                       my_clkdiv/cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      5.517ns (2.984ns logic, 2.533ns route)
+                                                       (54.1% logic, 45.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.913ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_5 (FF)
+  Destination:          my_clkdiv/cnt_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.052ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.035ns (0.039 - 0.074)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: my_clkdiv/cnt_5 to my_clkdiv/cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y75.XQ      Tcko                  0.631   my_clkdiv/cnt<5>
+                                                       my_clkdiv/cnt_5
+    SLICE_X33Y77.F2      net (fanout=2)        0.740   my_clkdiv/cnt<5>
+    SLICE_X33Y77.COUT    Topcyf                1.195   my_clkdiv/comp_wg_cy<1>
+                                                       my_clkdiv/comp_wg_lut<0>
+                                                       my_clkdiv/comp_wg_cy<0>
+                                                       my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.COUT    Tbyp                  0.130   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y81.G1      net (fanout=20)       1.243   my_clkdiv/comp
+    SLICE_X34Y81.CLK     Tgck                  0.817   my_clkdiv/cnt<17>
+                                                       my_clkdiv/Mcount_cnt_eqn_161
+                                                       my_clkdiv/cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      5.052ns (3.069ns logic, 1.983ns route)
+                                                       (60.7% logic, 39.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.916ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_3 (FF)
+  Destination:          my_clkdiv/cnt_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.049ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.035ns (0.039 - 0.074)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y74.XQ      Tcko                  0.631   my_clkdiv/cnt<3>
+                                                       my_clkdiv/cnt_3
+    SLICE_X33Y77.G3      net (fanout=2)        0.754   my_clkdiv/cnt<3>
+    SLICE_X33Y77.COUT    Topcyg                1.178   my_clkdiv/comp_wg_cy<1>
+                                                       my_clkdiv/comp_wg_lut<1>
+                                                       my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.COUT    Tbyp                  0.130   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y81.G1      net (fanout=20)       1.243   my_clkdiv/comp
+    SLICE_X34Y81.CLK     Tgck                  0.817   my_clkdiv/cnt<17>
+                                                       my_clkdiv/Mcount_cnt_eqn_161
+                                                       my_clkdiv/cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      5.049ns (3.052ns logic, 1.997ns route)
+                                                       (60.4% logic, 39.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point my_clkdiv/cnt_15 (SLICE_X34Y80.F1), 19 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.488ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_12 (FF)
+  Destination:          my_clkdiv/cnt_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.492ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.020ns (0.039 - 0.059)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: my_clkdiv/cnt_12 to my_clkdiv/cnt_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y78.YQ      Tcko                  0.676   my_clkdiv/cnt<13>
+                                                       my_clkdiv/cnt_12
+    SLICE_X33Y78.F1      net (fanout=2)        1.290   my_clkdiv/cnt<12>
+    SLICE_X33Y78.COUT    Topcyf                1.195   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_lut<2>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y80.F1      net (fanout=20)       1.233   my_clkdiv/comp
+    SLICE_X34Y80.CLK     Tfck                  0.802   my_clkdiv/cnt<15>
+                                                       my_clkdiv/Mcount_cnt_eqn_151
+                                                       my_clkdiv/cnt_15
+    -------------------------------------------------  ---------------------------
+    Total                                      5.492ns (2.969ns logic, 2.523ns route)
+                                                       (54.1% logic, 45.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.938ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_5 (FF)
+  Destination:          my_clkdiv/cnt_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.027ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.035ns (0.039 - 0.074)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: my_clkdiv/cnt_5 to my_clkdiv/cnt_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y75.XQ      Tcko                  0.631   my_clkdiv/cnt<5>
+                                                       my_clkdiv/cnt_5
+    SLICE_X33Y77.F2      net (fanout=2)        0.740   my_clkdiv/cnt<5>
+    SLICE_X33Y77.COUT    Topcyf                1.195   my_clkdiv/comp_wg_cy<1>
+                                                       my_clkdiv/comp_wg_lut<0>
+                                                       my_clkdiv/comp_wg_cy<0>
+                                                       my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.COUT    Tbyp                  0.130   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y80.F1      net (fanout=20)       1.233   my_clkdiv/comp
+    SLICE_X34Y80.CLK     Tfck                  0.802   my_clkdiv/cnt<15>
+                                                       my_clkdiv/Mcount_cnt_eqn_151
+                                                       my_clkdiv/cnt_15
+    -------------------------------------------------  ---------------------------
+    Total                                      5.027ns (3.054ns logic, 1.973ns route)
+                                                       (60.8% logic, 39.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.941ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               my_clkdiv/cnt_3 (FF)
+  Destination:          my_clkdiv/cnt_15 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.024ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.035ns (0.039 - 0.074)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y74.XQ      Tcko                  0.631   my_clkdiv/cnt<3>
+                                                       my_clkdiv/cnt_3
+    SLICE_X33Y77.G3      net (fanout=2)        0.754   my_clkdiv/cnt<3>
+    SLICE_X33Y77.COUT    Topcyg                1.178   my_clkdiv/comp_wg_cy<1>
+                                                       my_clkdiv/comp_wg_lut<1>
+                                                       my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<1>
+    SLICE_X33Y78.COUT    Tbyp                  0.130   my_clkdiv/comp_wg_cy<3>
+                                                       my_clkdiv/comp_wg_cy<2>
+                                                       my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.CIN     net (fanout=1)        0.000   my_clkdiv/comp_wg_cy<3>
+    SLICE_X33Y79.XB      Tcinxb                0.296   my_clkdiv/comp
+                                                       my_clkdiv/comp_wg_cy<4>
+    SLICE_X34Y80.F1      net (fanout=20)       1.233   my_clkdiv/comp
+    SLICE_X34Y80.CLK     Tfck                  0.802   my_clkdiv/cnt<15>
+                                                       my_clkdiv/Mcount_cnt_eqn_151
+                                                       my_clkdiv/cnt_15
+    -------------------------------------------------  ---------------------------
+    Total                                      5.024ns (3.037ns logic, 1.987ns route)
+                                                       (60.4% logic, 39.6% route)
 
 --------------------------------------------------------------------------------
 
@@ -359,110 +398,13 @@ Slack (hold path):      1.223ns (requirement - (clock path skew + uncertainty - 
 
 --------------------------------------------------------------------------------
 
-Paths for end point my_clkdiv/cnt_4 (SLICE_X34Y78.G3), 5 paths
+Paths for end point my_clkdiv/cnt_2 (SLICE_X34Y74.G3), 3 paths
 --------------------------------------------------------------------------------
-Slack (hold path):      2.317ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               my_clkdiv/cnt_4 (FF)
-  Destination:          my_clkdiv/cnt_4 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      2.317ns (Levels of Logic = 2)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 20.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path: my_clkdiv/cnt_4 to my_clkdiv/cnt_4
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y78.YQ      Tcko                  0.541   my_clkdiv/cnt<5>
-                                                       my_clkdiv/cnt_4
-    SLICE_X35Y78.F3      net (fanout=2)        0.329   my_clkdiv/cnt<4>
-    SLICE_X35Y78.X       Topx                  0.895   Result<4>
-                                                       my_clkdiv/cnt<4>_rt
-                                                       my_clkdiv/Mcount_cnt_xor<4>
-    SLICE_X34Y78.G3      net (fanout=1)        0.035   Result<4>
-    SLICE_X34Y78.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<5>
-                                                       my_clkdiv/Mcount_cnt_eqn_41
-                                                       my_clkdiv/cnt_4
-    -------------------------------------------------  ---------------------------
-    Total                                      2.317ns (1.953ns logic, 0.364ns route)
-                                                       (84.3% logic, 15.7% route)
-
---------------------------------------------------------------------------------
-Slack (hold path):      2.833ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               my_clkdiv/cnt_3 (FF)
-  Destination:          my_clkdiv/cnt_4 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      2.837ns (Levels of Logic = 3)
-  Clock Path Skew:      0.004ns (0.045 - 0.041)
-  Source Clock:         clk_BUFGP rising at 20.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path: my_clkdiv/cnt_3 to my_clkdiv/cnt_4
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y76.XQ      Tcko                  0.505   my_clkdiv/cnt<3>
-                                                       my_clkdiv/cnt_3
-    SLICE_X35Y77.G3      net (fanout=2)        0.355   my_clkdiv/cnt<3>
-    SLICE_X35Y77.COUT    Topcyg                0.942   Result<2>
-                                                       my_clkdiv/cnt<3>_rt
-                                                       my_clkdiv/Mcount_cnt_cy<3>
-    SLICE_X35Y78.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<3>
-    SLICE_X35Y78.X       Tcinx                 0.483   Result<4>
-                                                       my_clkdiv/Mcount_cnt_xor<4>
-    SLICE_X34Y78.G3      net (fanout=1)        0.035   Result<4>
-    SLICE_X34Y78.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<5>
-                                                       my_clkdiv/Mcount_cnt_eqn_41
-                                                       my_clkdiv/cnt_4
-    -------------------------------------------------  ---------------------------
-    Total                                      2.837ns (2.447ns logic, 0.390ns route)
-                                                       (86.3% logic, 13.7% route)
-
---------------------------------------------------------------------------------
-Slack (hold path):      2.834ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               my_clkdiv/cnt_2 (FF)
-  Destination:          my_clkdiv/cnt_4 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      2.838ns (Levels of Logic = 3)
-  Clock Path Skew:      0.004ns (0.045 - 0.041)
-  Source Clock:         clk_BUFGP rising at 20.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path: my_clkdiv/cnt_2 to my_clkdiv/cnt_4
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X34Y76.YQ      Tcko                  0.541   my_clkdiv/cnt<3>
-                                                       my_clkdiv/cnt_2
-    SLICE_X35Y77.F4      net (fanout=2)        0.306   my_clkdiv/cnt<2>
-    SLICE_X35Y77.COUT    Topcyf                0.956   Result<2>
-                                                       my_clkdiv/cnt<2>_rt
-                                                       my_clkdiv/Mcount_cnt_cy<2>
-                                                       my_clkdiv/Mcount_cnt_cy<3>
-    SLICE_X35Y78.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<3>
-    SLICE_X35Y78.X       Tcinx                 0.483   Result<4>
-                                                       my_clkdiv/Mcount_cnt_xor<4>
-    SLICE_X34Y78.G3      net (fanout=1)        0.035   Result<4>
-    SLICE_X34Y78.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<5>
-                                                       my_clkdiv/Mcount_cnt_eqn_41
-                                                       my_clkdiv/cnt_4
-    -------------------------------------------------  ---------------------------
-    Total                                      2.838ns (2.497ns logic, 0.341ns route)
-                                                       (88.0% logic, 12.0% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point my_clkdiv/cnt_2 (SLICE_X34Y76.G4), 3 paths
---------------------------------------------------------------------------------
-Slack (hold path):      2.344ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      2.311ns (requirement - (clock path skew + uncertainty - data path))
   Source:               my_clkdiv/cnt_2 (FF)
   Destination:          my_clkdiv/cnt_2 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      2.344ns (Levels of Logic = 2)
+  Data Path Delay:      2.311ns (Levels of Logic = 2)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
@@ -472,27 +414,27 @@ Slack (hold path):      2.344ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X34Y76.YQ      Tcko                  0.541   my_clkdiv/cnt<3>
+    SLICE_X34Y74.YQ      Tcko                  0.541   my_clkdiv/cnt<3>
                                                        my_clkdiv/cnt_2
-    SLICE_X35Y77.F4      net (fanout=2)        0.306   my_clkdiv/cnt<2>
-    SLICE_X35Y77.X       Topx                  0.895   Result<2>
+    SLICE_X35Y74.F3      net (fanout=2)        0.323   my_clkdiv/cnt<2>
+    SLICE_X35Y74.X       Topx                  0.895   Result<2>
                                                        my_clkdiv/cnt<2>_rt
                                                        my_clkdiv/Mcount_cnt_xor<2>
-    SLICE_X34Y76.G4      net (fanout=1)        0.085   Result<2>
-    SLICE_X34Y76.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<3>
+    SLICE_X34Y74.G3      net (fanout=1)        0.035   Result<2>
+    SLICE_X34Y74.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<3>
                                                        my_clkdiv/Mcount_cnt_eqn_21
                                                        my_clkdiv/cnt_2
     -------------------------------------------------  ---------------------------
-    Total                                      2.344ns (1.953ns logic, 0.391ns route)
-                                                       (83.3% logic, 16.7% route)
+    Total                                      2.311ns (1.953ns logic, 0.358ns route)
+                                                       (84.5% logic, 15.5% route)
 
 --------------------------------------------------------------------------------
-Slack (hold path):      2.903ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      2.782ns (requirement - (clock path skew + uncertainty - data path))
   Source:               my_clkdiv/cnt_1 (FF)
   Destination:          my_clkdiv/cnt_2 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      2.911ns (Levels of Logic = 3)
-  Clock Path Skew:      0.008ns (0.049 - 0.041)
+  Data Path Delay:      2.790ns (Levels of Logic = 3)
+  Clock Path Skew:      0.008ns (0.074 - 0.066)
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -501,30 +443,30 @@ Slack (hold path):      2.903ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X34Y77.XQ      Tcko                  0.505   my_clkdiv/cnt<1>
+    SLICE_X34Y72.XQ      Tcko                  0.505   my_clkdiv/cnt<1>
                                                        my_clkdiv/cnt_1
-    SLICE_X35Y76.G2      net (fanout=2)        0.379   my_clkdiv/cnt<1>
-    SLICE_X35Y76.COUT    Topcyg                0.942   Result<0>
+    SLICE_X35Y73.G4      net (fanout=2)        0.308   my_clkdiv/cnt<1>
+    SLICE_X35Y73.COUT    Topcyg                0.942   Result<0>
                                                        my_clkdiv/cnt<1>_rt
                                                        my_clkdiv/Mcount_cnt_cy<1>
-    SLICE_X35Y77.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<1>
-    SLICE_X35Y77.X       Tcinx                 0.483   Result<2>
+    SLICE_X35Y74.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<1>
+    SLICE_X35Y74.X       Tcinx                 0.483   Result<2>
                                                        my_clkdiv/Mcount_cnt_xor<2>
-    SLICE_X34Y76.G4      net (fanout=1)        0.085   Result<2>
-    SLICE_X34Y76.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<3>
+    SLICE_X34Y74.G3      net (fanout=1)        0.035   Result<2>
+    SLICE_X34Y74.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<3>
                                                        my_clkdiv/Mcount_cnt_eqn_21
                                                        my_clkdiv/cnt_2
     -------------------------------------------------  ---------------------------
-    Total                                      2.911ns (2.447ns logic, 0.464ns route)
-                                                       (84.1% logic, 15.9% route)
+    Total                                      2.790ns (2.447ns logic, 0.343ns route)
+                                                       (87.7% logic, 12.3% route)
 
 --------------------------------------------------------------------------------
-Slack (hold path):      2.983ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      2.933ns (requirement - (clock path skew + uncertainty - data path))
   Source:               my_clkdiv/cnt_0 (FF)
   Destination:          my_clkdiv/cnt_2 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      2.991ns (Levels of Logic = 3)
-  Clock Path Skew:      0.008ns (0.049 - 0.041)
+  Data Path Delay:      2.941ns (Levels of Logic = 3)
+  Clock Path Skew:      0.008ns (0.074 - 0.066)
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
@@ -533,23 +475,123 @@ Slack (hold path):      2.983ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X34Y77.YQ      Tcko                  0.541   my_clkdiv/cnt<1>
+    SLICE_X34Y72.YQ      Tcko                  0.541   my_clkdiv/cnt<1>
                                                        my_clkdiv/cnt_0
-    SLICE_X35Y76.F1      net (fanout=2)        0.409   my_clkdiv/cnt<0>
-    SLICE_X35Y76.COUT    Topcyf                0.956   Result<0>
+    SLICE_X35Y73.F1      net (fanout=2)        0.409   my_clkdiv/cnt<0>
+    SLICE_X35Y73.COUT    Topcyf                0.956   Result<0>
                                                        my_clkdiv/Mcount_cnt_lut<0>_INV_0
                                                        my_clkdiv/Mcount_cnt_cy<0>
                                                        my_clkdiv/Mcount_cnt_cy<1>
-    SLICE_X35Y77.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<1>
-    SLICE_X35Y77.X       Tcinx                 0.483   Result<2>
+    SLICE_X35Y74.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<1>
+    SLICE_X35Y74.X       Tcinx                 0.483   Result<2>
                                                        my_clkdiv/Mcount_cnt_xor<2>
-    SLICE_X34Y76.G4      net (fanout=1)        0.085   Result<2>
-    SLICE_X34Y76.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<3>
+    SLICE_X34Y74.G3      net (fanout=1)        0.035   Result<2>
+    SLICE_X34Y74.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<3>
                                                        my_clkdiv/Mcount_cnt_eqn_21
                                                        my_clkdiv/cnt_2
     -------------------------------------------------  ---------------------------
-    Total                                      2.991ns (2.497ns logic, 0.494ns route)
-                                                       (83.5% logic, 16.5% route)
+    Total                                      2.941ns (2.497ns logic, 0.444ns route)
+                                                       (84.9% logic, 15.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point my_clkdiv/cnt_16 (SLICE_X34Y81.G4), 17 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      2.344ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               my_clkdiv/cnt_16 (FF)
+  Destination:          my_clkdiv/cnt_16 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      2.344ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: my_clkdiv/cnt_16 to my_clkdiv/cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y81.YQ      Tcko                  0.541   my_clkdiv/cnt<17>
+                                                       my_clkdiv/cnt_16
+    SLICE_X35Y81.F4      net (fanout=2)        0.306   my_clkdiv/cnt<16>
+    SLICE_X35Y81.X       Topx                  0.895   Result<16>
+                                                       my_clkdiv/cnt<16>_rt
+                                                       my_clkdiv/Mcount_cnt_xor<16>
+    SLICE_X34Y81.G4      net (fanout=1)        0.085   Result<16>
+    SLICE_X34Y81.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<17>
+                                                       my_clkdiv/Mcount_cnt_eqn_161
+                                                       my_clkdiv/cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      2.344ns (1.953ns logic, 0.391ns route)
+                                                       (83.3% logic, 16.7% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      2.857ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               my_clkdiv/cnt_15 (FF)
+  Destination:          my_clkdiv/cnt_16 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      2.864ns (Levels of Logic = 3)
+  Clock Path Skew:      0.007ns (0.046 - 0.039)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: my_clkdiv/cnt_15 to my_clkdiv/cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y80.XQ      Tcko                  0.505   my_clkdiv/cnt<15>
+                                                       my_clkdiv/cnt_15
+    SLICE_X35Y80.G3      net (fanout=2)        0.332   my_clkdiv/cnt<15>
+    SLICE_X35Y80.COUT    Topcyg                0.942   Result<14>
+                                                       my_clkdiv/cnt<15>_rt
+                                                       my_clkdiv/Mcount_cnt_cy<15>
+    SLICE_X35Y81.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<15>
+    SLICE_X35Y81.X       Tcinx                 0.483   Result<16>
+                                                       my_clkdiv/Mcount_cnt_xor<16>
+    SLICE_X34Y81.G4      net (fanout=1)        0.085   Result<16>
+    SLICE_X34Y81.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<17>
+                                                       my_clkdiv/Mcount_cnt_eqn_161
+                                                       my_clkdiv/cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      2.864ns (2.447ns logic, 0.417ns route)
+                                                       (85.4% logic, 14.6% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      2.948ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               my_clkdiv/cnt_13 (FF)
+  Destination:          my_clkdiv/cnt_16 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      2.944ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.004ns (0.046 - 0.050)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: my_clkdiv/cnt_13 to my_clkdiv/cnt_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y78.XQ      Tcko                  0.505   my_clkdiv/cnt<13>
+                                                       my_clkdiv/cnt_13
+    SLICE_X35Y79.G4      net (fanout=2)        0.308   my_clkdiv/cnt<13>
+    SLICE_X35Y79.COUT    Topcyg                0.942   Result<12>
+                                                       my_clkdiv/cnt<13>_rt
+                                                       my_clkdiv/Mcount_cnt_cy<13>
+    SLICE_X35Y80.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<13>
+    SLICE_X35Y80.COUT    Tbyp                  0.104   Result<14>
+                                                       my_clkdiv/Mcount_cnt_cy<14>
+                                                       my_clkdiv/Mcount_cnt_cy<15>
+    SLICE_X35Y81.CIN     net (fanout=1)        0.000   my_clkdiv/Mcount_cnt_cy<15>
+    SLICE_X35Y81.X       Tcinx                 0.483   Result<16>
+                                                       my_clkdiv/Mcount_cnt_xor<16>
+    SLICE_X34Y81.G4      net (fanout=1)        0.085   Result<16>
+    SLICE_X34Y81.CLK     Tckg        (-Th)    -0.517   my_clkdiv/cnt<17>
+                                                       my_clkdiv/Mcount_cnt_eqn_161
+                                                       my_clkdiv/cnt_16
+    -------------------------------------------------  ---------------------------
+    Total                                      2.944ns (2.551ns logic, 0.393ns route)
+                                                       (86.7% logic, 13.3% route)
 
 --------------------------------------------------------------------------------
 
@@ -559,26 +601,26 @@ Slack: 18.398ns (period - (min low pulse limit / (low pulse / period)))
   Period: 20.000ns
   Low pulse: 10.000ns
   Low pulse limit: 0.801ns (Tcl)
-  Physical resource: my_clkdiv/cnt<5>/CLK
-  Logical resource: my_clkdiv/cnt_5/CK
-  Location pin: SLICE_X34Y78.CLK
+  Physical resource: my_clkdiv/cnt<15>/CLK
+  Logical resource: my_clkdiv/cnt_15/CK
+  Location pin: SLICE_X34Y80.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.398ns (period - (min high pulse limit / (high pulse / period)))
   Period: 20.000ns
   High pulse: 10.000ns
   High pulse limit: 0.801ns (Tch)
-  Physical resource: my_clkdiv/cnt<5>/CLK
-  Logical resource: my_clkdiv/cnt_5/CK
-  Location pin: SLICE_X34Y78.CLK
+  Physical resource: my_clkdiv/cnt<15>/CLK
+  Logical resource: my_clkdiv/cnt_15/CK
+  Location pin: SLICE_X34Y80.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 18.398ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 1.602ns (624.220MHz) (Tcp)
-  Physical resource: my_clkdiv/cnt<5>/CLK
-  Logical resource: my_clkdiv/cnt_5/CK
-  Location pin: SLICE_X34Y78.CLK
+  Physical resource: my_clkdiv/cnt<15>/CLK
+  Logical resource: my_clkdiv/cnt_15/CK
+  Location pin: SLICE_X34Y80.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -595,7 +637,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.669|         |         |         |
+clk            |    5.619|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -604,23 +646,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 409 paths, 0 nets, and 87 connections
+Constraints cover 571 paths, 0 nets, and 101 connections
 
 Design statistics:
-   Minimum period:   5.669ns{1}   (Maximum frequency: 176.398MHz)
+   Minimum period:   5.619ns{1}   (Maximum frequency: 177.968MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Dec 14 18:49:00 2017 
+Analysis completed Thu Dec 14 19:08:31 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 386 MB
+Peak Memory Usage: 385 MB
 
 
 
