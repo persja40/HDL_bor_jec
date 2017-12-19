@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-zejlab5::  Tue Dec 19 09:12:08 2017
+zejlab5::  Tue Dec 19 09:27:37 2017
 
 par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
 
@@ -50,7 +50,7 @@ Design Summary Report:
 
 
    Number of BUFGMUXs                        2 out of 24      8%
-   Number of Slices                         83 out of 5888    1%
+   Number of Slices                         92 out of 5888    1%
       Number of SLICEMs                      0 out of 2944    0%
 
 
@@ -69,37 +69,37 @@ Total REAL time at the beginning of Placer: 8 secs
 Total CPU  time at the beginning of Placer: 2 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:a2979920) REAL time: 9 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:27934edd) REAL time: 9 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:a2979920) REAL time: 9 secs 
+Phase 2.7  Design Feasibility Check (Checksum:27934edd) REAL time: 9 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:a2979920) REAL time: 9 secs 
+Phase 3.31  Local Placement Optimization (Checksum:27934edd) REAL time: 9 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:774ef16d) REAL time: 11 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:3fa02b56) REAL time: 11 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:774ef16d) REAL time: 11 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:3fa02b56) REAL time: 11 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:774ef16d) REAL time: 11 secs 
+Phase 6.36  Local Placement Optimization (Checksum:3fa02b56) REAL time: 11 secs 
 
 Phase 7.8  Global Placement
 ..
 ..
-Phase 7.8  Global Placement (Checksum:acaf5158) REAL time: 11 secs 
+Phase 7.8  Global Placement (Checksum:71083e60) REAL time: 11 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:acaf5158) REAL time: 11 secs 
+Phase 8.5  Local Placement Optimization (Checksum:71083e60) REAL time: 11 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:253882b3) REAL time: 11 secs 
+Phase 9.18  Placement Optimization (Checksum:c26102b8) REAL time: 11 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:253882b3) REAL time: 11 secs 
+Phase 10.5  Local Placement Optimization (Checksum:c26102b8) REAL time: 11 secs 
 
 Total REAL time to Placer completion: 11 secs 
 Total CPU  time to Placer completion: 5 secs 
@@ -110,13 +110,13 @@ Writing design to file top.ncd
 Starting Router
 
 
-Phase  1  : 610 unrouted;      REAL time: 16 secs 
+Phase  1  : 643 unrouted;      REAL time: 16 secs 
 
-Phase  2  : 560 unrouted;      REAL time: 16 secs 
+Phase  2  : 587 unrouted;      REAL time: 16 secs 
 
-Phase  3  : 98 unrouted;      REAL time: 16 secs 
+Phase  3  : 78 unrouted;      REAL time: 16 secs 
 
-Phase  4  : 98 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
+Phase  4  : 78 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
 
 Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 17 secs 
 
@@ -147,9 +147,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X2Y11| No   |   10 |  0.060     |  1.090      |
+|  my_clkdiv/clk_slow | BUFGMUX_X1Y10| No   |   45 |  0.094     |  1.084      |
 +---------------------+--------------+------+------+------------+-------------+
-|  my_clkdiv/clk_slow | BUFGMUX_X1Y10| No   |   39 |  0.079     |  1.065      |
+|           clk_BUFGP | BUFGMUX_X2Y11| No   |   10 |  0.053     |  1.083      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -169,7 +169,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH | SETUP       |    14.331ns|     5.669ns|       0|           0
+  NET "clk_BUFGP/IBUFG" PERIOD = 20 ns HIGH | SETUP       |    14.294ns|     5.706ns|       0|           0
    50%                                      | HOLD        |     1.223ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 

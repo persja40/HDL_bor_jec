@@ -24,7 +24,7 @@ localparam locked=4'd0, start=4'd1,
 			  cw=4'd2, first_ok=4'd3,
 			  second_ok=4'd4, third_ok=4'd5,
 			  unlocked=4'd6, lock_ok=4'd7,
-			  bad_nu=4'd8;		  
+			  bad_first_ok=4'd8, bad_second_ok=4'd9, bad_third_ok=4'd10;
 
 always@(posedge clk, posedge rst)
 begin
@@ -130,7 +130,7 @@ begin
 					ust = first_ok;
 				else
 					if (dirch && !eq)
-						ust = bad_nu;
+						ust = bad_first_ok;
 					else
 						ust = cw;
 			end
@@ -140,9 +140,16 @@ begin
 					ust = second_ok;
 				else
 					if (dirch && !eq)
-						ust = bad_nu;
+						ust = bad_second_ok;
 					else
 						ust = first_ok;
+			end
+		bad_first_ok:
+			begin
+				if (dirch)
+					ust = bad_second_ok;
+				else
+					ust = bad_first_ok;
 			end
 		second_ok:
 			begin
@@ -150,20 +157,27 @@ begin
 					ust = third_ok;
 				else
 					if (dirch && !eq)
-						ust = bad_nu;
+						ust = bad_third_ok;
 					else
 						ust = second_ok;
 			end
+		bad_second_ok:
+			begin
+				if (open)
+					ust = bad_third_ok;
+				else
+					ust = bad_second_ok;
+			end	
 		third_ok:
 			ust = unlocked;
+		bad_third_ok:
+			ust = locked;
 		unlocked:
 			if (lock && doorCls)
 				ust = lock_ok;
 			else
 				ust = unlocked;
 		lock_ok:
-			ust = locked;
-		bad_nu:
 			ust = locked;
 	endcase
 end
