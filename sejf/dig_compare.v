@@ -7,9 +7,9 @@ module dig_compare(
     output reg eq
     );
 	 
-localparam code0m=1, code0l=0,
-			  code1m=0, code1l=5,
-			  code2m=1, code2l=5;
+localparam code0m=2, code0l=5,
+			  code1m=3, code1l=0,
+			  code2m=2, code2l=5;
 
 always @*
 begin

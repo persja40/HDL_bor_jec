@@ -22,7 +22,8 @@ module top # ( parameter div = 2500000 ) (
 	 // ledy
 	 output outDirch,
 	 output outUp,
-	 output outCnten
+	 output outCnten,
+	 output safeOpen
     );
 	 
 	wire clk_1ms;
@@ -94,7 +95,8 @@ module top # ( parameter div = 2500000 ) (
 		 .openCls(openCls),
 		 .sel(sel),
 		 .blank(blank),
-		 .clrCount(clrCount)
+		 .clrCount(clrCount),
+		 .safeOpen(safeOpen)
 	);
 	
 	lcd_driver my_lcd_driver (

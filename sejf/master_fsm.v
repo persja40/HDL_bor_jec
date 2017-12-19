@@ -15,7 +15,8 @@ module master_fsm(
     output reg openCls,
     output reg [1:0] sel,
     output reg blank,
-    output reg clrCount
+    output reg clrCount,
+	 output reg safeOpen
     );
 	 
 reg [3:0] st, ust;
@@ -41,6 +42,16 @@ begin
 		locked: blank <= 1;
 		unlocked: blank <= 1;
 		default: blank <= 0;
+	endcase
+end
+
+always@(posedge clk, posedge rst)
+begin
+	if(rst)
+		safeOpen <= 0;
+	else case(st)
+		unlocked: safeOpen <= 1;
+		default: safeOpen <= 0;
 	endcase
 end
 
@@ -83,7 +94,7 @@ begin
 		actuateLock <= 0;
 	else case(st)
 		third_ok: actuateLock <= 1;
-		lock_ok: if (!doorCls) actuateLock <= 1;
+		lock_ok: actuateLock <= 1;
 		default: actuateLock <= 0;
 	endcase
 end
