@@ -38,7 +38,7 @@ module LCD_dp(
 	);
 	
 	mux8 data2_mux8 (
-		.in1(8'hCC),
+		.in1(8'hCE),
 		.in2(data_out),
 		.sel(DB_sel), 
 		.out(DB_out)

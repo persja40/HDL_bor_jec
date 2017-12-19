@@ -15,7 +15,7 @@ module lcd_driver(
 	wire [1:0] mux_sel;
 	wire [1:0] init_sel;
 	
-	assign hardcoded_data = blank ? {4'h0, 4'h0, 4'h0, 4'h0} : {4'h0, 4'h0, data[7:4], data[3:0]};
+	assign hardcoded_data = blank ? {4'h0, 4'h0, 4'h0, 4'h0} : {data[7:4], data[3:0], 4'h0, 4'h0};
 
 	lcd_controller my_LCD_controller (
 		.reset(reset),
