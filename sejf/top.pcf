@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Dec 19 08:26:58 2017
+// Written by: Map P.20131013 on Tue Dec 19 09:12:04 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -13,7 +13,7 @@ COMP "DB<6>" LOCATE = SITE "AB16" LEVEL 1;
 COMP "doorCls" LOCATE = SITE "V8" LEVEL 1;
 COMP "DB<7>" LOCATE = SITE "Y15" LEVEL 1;
 COMP "clk" LOCATE = SITE "E12" LEVEL 1;
-COMP "outDirch" LOCATE = SITE "V19" LEVEL 1;
+COMP "outDirch" LOCATE = SITE "W21" LEVEL 1;
 COMP "outUp" LOCATE = SITE "V20" LEVEL 1;
 COMP "actuateLock" LOCATE = SITE "R20" LEVEL 1;
 COMP "safeOpen" LOCATE = SITE "U20" LEVEL 1;

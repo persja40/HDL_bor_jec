@@ -13,7 +13,8 @@ module fake_decoder(
 reg [2:0] st, ust;
 localparam left=3'b000, right=3'b001,
            nowLeft=3'b010, nowRight=3'b011,
-			  nowLeftChanged=3'b100, nowRightChanged=3'b101;
+			  nowLeftChanged=3'b100, nowRightChanged=3'b101,
+			  preLeft=3'b110, preRight=3'b111;
 
 always @(posedge clk, posedge rst)
 begin
@@ -74,7 +75,7 @@ begin
 				else
 					ust <= left;
 		nowLeft:
-			ust <= left;
+			ust <= preLeft;
 		right:
 			if (rightButton)
 				ust <= nowRight;
@@ -84,11 +85,21 @@ begin
 				else
 					ust <= right;
 		nowRight:
-			ust <= right;
+			ust <= preRight;
 		nowRightChanged:
-			ust <= right;
+			ust <= preRight;
 		nowLeftChanged:
-			ust <= left;
+			ust <= preLeft;
+		preLeft:
+			if (!leftButton)
+				ust <= left;
+			else
+				ust <= preLeft;
+		preRight:
+			if (!rightButton)
+				ust <= right;
+			else
+				ust <= preRight;
 		default:
 			ust <= left;
 	endcase
