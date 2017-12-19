@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-12-19T08:08:35</DateModified>
+  <DateModified>2017-12-19T09:30:12</DateModified>
   <ModuleName>top</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2017-12-19T09:28:12</SummaryTimeStamp>
   <SavedFilePath>/home/lab_jos/HDL_bor_jec/sejf/iseconfig/top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/lab_jos/HDL_bor_jec/sejf/</ImplementationReportsDirectory>
   <DateInitialized>2017-11-23T20:09:23</DateInitialized>
